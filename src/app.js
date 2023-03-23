@@ -1,36 +1,29 @@
-/*
-* File: app.js
-* Author: Erős István
-* Copyright: 2023, Erős István
-* Group: Szoft I-2 N
-* Date: 2023-02-23
-* Github: https://github.com/erosistvan/
-* Licenc: GNU GPL
-*/
-
-const radiusInput = document.querySelector('#radius');
-const heightInput = document.querySelector('#height');
-const areaInput = document.querySelector('#area');
+const betetInput = document.querySelector('#betet');
+const nkamatInput = document.querySelector('#nkamat');
+const tokesitesInput = document.querySelector('#tokesites');
 const calcButton = document.querySelector('#calcButton');
-const result = document.querySelector('#result');
+const Tkamat = document.querySelector('#tkamat');
 
 calcButton.addEventListener('click', () => {
-    console.log('Terület:')
-    const radius = Number(radiusInput.value);
-    const height = Number(heightInput.value);
-    let area =calcArea(radius ,height);
-    areaInput.value = area;
-    console.log(area);
+    console.log("tkamat")
+    const betet = Number(betetInput.value);
+    const nkamat = Number(nkamatInput.value);
+    const tokesites =Number(tokesitesInput.value);
+    let tkamat =calcTkamat(betet ,nkamat, tokesites);
+    Tkamat.value=tkamat;
     result.style.display='block';
     deleteInputs();
 });
 
-function calcArea(radius,height){
-let area = (1.0/3) * Math.pow(radius, 2) * Math.PI * height;
-return area;
+function calcTkamat(betet,nkamat,tokesites){
+//let tkamat = ((1 + nkamat / (100 * tokesites)) ^ (tokesites  )-1)*betet;
+return ((1 + nkamat / (100 * tokesites)) ^ (tokesites  )-1)*betet
+
 }
 
 function deleteInputs(){
-    radiusInput.value='';
-    heightInput.value='';
+    betetInput.value='';
+    nkamatInput.value='';
+    tokesitesInput.value='';
+    
 }
