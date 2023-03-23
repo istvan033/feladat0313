@@ -1,0 +1,13 @@
+footer {
+    background-color: aqua;
+    padding: 3px;
+    text-align: center;
+    position: fixed;
+    top: 80px;
+    right: -180px;
+    width: 600px;
+    transform: rotate(45deg);
+    font-size:10px;
+    border-top:3px
+    
+}
